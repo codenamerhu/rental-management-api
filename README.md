@@ -18,10 +18,12 @@ This is a Node.js REST API for managing properties, locations, and user roles (T
     - [Location Endpoints](#location-endpoints)
     - [Role-Based Access Control](#role-based-access-control)
   - [Testing](#testing)
+  - [Continuous Integration](#continuous-integration)
+  - [Contribution Guidelines](#contribution-guidelines)
   - [Future Improvements](#future-improvements)
 
 ## Features
-- **User Authentication**: Register and login for users with roles (Tenant, Landlord, Agent, and Staff).
+- **User Authentication**: Register and login for users with role (Tenant, Landlord, Agent, Staff).
 - **Role-Based Access Control**: Restrict access based on user roles and staff permissions (SuperUser, Editor, etc.).
 - **Property and Location Management**: CRUD operations for properties and locations with fields like title, description, price, images, and location details (province, city, suburb, coordinates).
 - **Image Upload**: Upload and store property images on AWS S3.
@@ -35,11 +37,12 @@ This is a Node.js REST API for managing properties, locations, and user roles (T
 - **AWS S3**: Storage for property images.
 - **Jest**: Testing framework for unit tests.
 - **dotenv**: Environment variable management.
+- **GitHub Actions**: Continuous integration (CI) for running tests automatically on each push.
 
 ## Getting Started
 
 ### Prerequisites
-- Node.js >= 14
+- Node.js >= 16
 - MongoDB
 - AWS S3 account for image uploads
 
@@ -91,7 +94,7 @@ To run this project, you need to set up the following environment variables in a
   ```
   AWS_ACCESS_KEY_ID=your-aws-access-key-id
   AWS_SECRET_ACCESS_KEY=your-aws-secret-access-key
-  S3_BUCKET_NAME=your-s3-bucket-name
+  AWS_BUCKET_NAME=your-s3-bucket-name
   ```
 
 ## Endpoints
@@ -131,6 +134,22 @@ Tests include:
 - Authentication tests (registration, login, role validation).
 - Property tests (create, read, update, delete).
 - Location tests (CRUD operations).
+
+## Continuous Integration
+This project uses GitHub Actions for continuous integration. Each time code is pushed to the repository or a pull request is made, GitHub Actions runs the test suite to ensure code reliability.
+
+You can find the GitHub Actions configuration in `.github/workflows/test.yml`.
+
+## Contribution Guidelines
+Contributions are welcome! If you'd like to add a new feature or fix a bug, please follow these guidelines:
+
+1. **Fork** the repository and create your branch from `main`.
+2. **Install** all dependencies to ensure compatibility.
+3. **Write Unit Tests**: For any new features or changes, add unit tests to maintain code reliability.
+4. **Commit** changes with clear messages.
+5. **Push** your branch and submit a **Pull Request**.
+
+Please ensure all tests pass in GitHub Actions before submitting your PR.
 
 ## Future Improvements
 - Add support for advanced search and filtering on properties.
