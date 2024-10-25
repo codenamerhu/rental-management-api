@@ -46,7 +46,7 @@ This is a Node.js REST API for managing properties, locations, and user roles (T
 ### Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/property-management-api.git
+   git clone https://github.com/codenamerhu/property-management-api.git
    cd property-management-api
    ```
 
