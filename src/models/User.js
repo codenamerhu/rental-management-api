@@ -3,9 +3,11 @@ const bcrypt = require('bcryptjs');
 const { Roles, StaffRoles } = require('../constants/roles');
 
 const userSchema = new mongoose.Schema({
-    name: { type: String, required: true },
+    firstName: { type: String, required: true },
+    lastName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    number: { type: String, required: true },
     roles: { 
         type: [String], 
         enum: Object.values(Roles), // Use enum for role validation

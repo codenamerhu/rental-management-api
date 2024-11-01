@@ -8,7 +8,8 @@ describe('Auth API', () => {
     it('should register a new Staff user with SuperUser role', async () => {
         const req = {
             body: {
-                name: 'Admin User',
+                firstName: "Admin",
+                lastName: "User",
                 email: 'admin@example.com',
                 password: 'password123',
                 roles: [Roles.STAFF],
